@@ -10,18 +10,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AppApplication implements CommandLineRunner {
 
-   private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
+    @Autowired
     StudentJdbcRepository repository;
 
+    public static void main(String[] args) {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AppApplication.class, args);
-	}
+        SpringApplication.run(AppApplication.class, args);
+    }
 
-	@Override
-    public void run(String... args)  {
+    @Override
+    public void run(String... args) {
 
         logger.info("Student id 10001 -> {}", repository.findById(10001L));
 
